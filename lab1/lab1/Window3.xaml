@@ -1,0 +1,51 @@
+﻿<Window x:Name="Window4" x:Class="lab1.Window3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab1"
+        mc:Ignorable="d"
+        Title="Window3" Height="450" Width="800" Background="#FF335DAC">
+    <Grid Margin="186,81,187,65">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="ToMain" Content="RETURN TO MAIN" HorizontalAlignment="Left" Margin="340,383,0,0" VerticalAlignment="Top" Click="ToMain_Click" Height="19" Width="138"/>
+        <Button x:Name="ToMain_Copy" Content="RETURN TO MAIN" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ToMain_Click" Height="41" Width="213" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2"/>
+        <Button x:Name="Numb7" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Click="Numb7_Click" Height="41" Width="107" Content="7"/>
+        <Button x:Name="Numb8" Content="8" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Click="Numb8_Click" Height="41" Width="107" Grid.Column="1"/>
+        <Button x:Name="Numb4" Content="4" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Click="Numb4_Click" Height="41" Width="107"/>
+        <Button x:Name="Numb5" Content="5" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Click="Numb5_Click" Height="41" Width="107" Grid.Column="1"/>
+        <Button x:Name="Numb1" Content="1" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Click="Numb1_Click" Height="41" Width="107"/>
+        <Button x:Name="Numb2" Content="2" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Click="Numb2_Click" Height="41" Width="107" Grid.Column="1"/>
+        <Button x:Name="Numb9" Content="9" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Click="Numb9_Click" Height="41" Width="107" Grid.Column="2"/>
+        <Button x:Name="Numb6" Content="6" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Click="Numb6_Click" Height="41" Width="107" Grid.Column="2"/>
+        <Button x:Name="Numb3" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Numb3_Click" Height="41" Width="107" Grid.Column="2" Grid.Row="4"/>
+        <Button x:Name="Numb0" Content="0" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Height="41" Width="107" Grid.Column="1" Click="Numb0_Click"/>
+        <TextBox x:Name="CalBox" Grid.ColumnSpan="3" TextWrapping="Wrap" VerticalAlignment="Center" Height="41" TextChanged="CalBox_TextChanged" FontSize="18"/>
+        <Button x:Name="PlusButton" Grid.Column="3" Content="+" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Height="41" Width="107" Click="PlusButton_Click"/>
+        <Button x:Name="MinusButton" Grid.Column="3" Content="-" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="41" Width="107" Click="MinusButton_Click"/>
+        <Button x:Name="DivideButton" Grid.Column="3" Content="/" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Height="41" Width="107" Click="DivideButton_Click"/>
+        <Button x:Name="MultiplyButton" Grid.Column="3" Content="*" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Height="41" Width="107" Click="MultiplyButton_Click"/>
+        <Button x:Name="DelButton" Grid.Column="3" Content="&lt;=" HorizontalAlignment="Center" VerticalAlignment="Center" Height="41" Width="107" Click="DelButton_Click"/>
+        <Button x:Name="DecButton" Grid.Column="2" Content="," HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Height="41" Width="107" Click="DecButton_Click"/>
+        <Button x:Name="NegButton" Content="+/-" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Height="41" Width="107" Click="NegButton_Click"/>
+        <Button x:Name="EqualButton" Grid.Column="3" Content="=" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Height="41" Width="107" Click="EqualButton_Click"/>
+        <Button x:Name="RevButton" Grid.Column="1" Content="1/x" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Height="41" Width="106" Click="RevButton_Click"/>
+        <Button x:Name="SqrtButton" Content="sqrt(x)" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Height="41" Width="107" Click="SqrtButton_Click"/>
+        <Button x:Name="ClearButton" Grid.Column="2" Content="CLEAR" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Height="41" Width="106" Click="ClearButton_Click"/>
+
+    </Grid>
+</Window>

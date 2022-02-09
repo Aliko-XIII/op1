@@ -1,0 +1,8 @@
+ID:1;First name:; Second name:; Patronymic:; Phone number:; Date:;
+ID:2;First name:; Second name:; Patronymic:; Phone number:; Date:;
+ID:3;First name:; Second name:; Patronymic:; Phone number:; Date:;
+ID:5;First name:; Second name:; Patronymic:; Phone number:; Date:;
+
+ID:1;First name:; Second name:; Patronymic:; Phone number:; Date:;
+ID:12;First name:; Second name:; Patronymic:; Phone number:; Date:;
+ID:123;First name:; Second name:; Patronymic:; Phone number:; Date:;
