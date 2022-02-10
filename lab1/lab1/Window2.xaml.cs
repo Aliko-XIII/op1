@@ -126,7 +126,6 @@ namespace lab1
                         field.IsEnabled = false;
                     }
                 }
-                btn.Background = Brushes.Red;
                 turn = !turn;
             }
             else
