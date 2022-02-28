@@ -5,9 +5,4 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lab1"
         mc:Ignorable="d"
-        Title="Window4" Height="450" Width="800" Background="#FF6B03E9">
-    <Grid>
-        <Button x:Name="ToMain" Content="RETURN TO MAIN" HorizontalAlignment="Center" Margin="0,342,0,0" VerticalAlignment="Top" Click="ToMain_Click" Height="53" Width="184"/>
-        <TextBlock x:Name="InfBox" HorizontalAlignment="Left" Margin="259,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="167" Width="304" Foreground="White" FontFamily="Consolas" FontSize="18"><Run Text="Л"/><Run Language="uk-ua" Text="а"/><Run Text="бораторна робота №1"/><LineBreak/><Run Language="uk-ua" Text="Підготував Тектов Аліко Гівійович"/><LineBreak/><Run Language="uk-ua" Text="студент 1 курсу ПЗКС ФПМ"/><LineBreak/><Run Language="uk-ua" Text="група КП-13"/><LineBreak/><Run Language="uk-ua" Text="лютий 2022 року "/></TextBlock>
-    </Grid>
-</Window>
+        Title="Window4" Height="450" Width="800" Background="#FF6B03E9"/>

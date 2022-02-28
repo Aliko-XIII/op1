@@ -5,30 +5,4 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lab1"
         mc:Ignorable="d"
-        Title="Window2" Height="450" Width="800" Background="#FF86DE6A">
-    <Grid Margin="0,0,0,6">
-
-        <Button x:Name="ToMain" Content="RETURN TO MAIN" HorizontalAlignment="Center" VerticalAlignment="Top" Click="ToMain_Click" Height="53" Width="184" Margin="0,342,0,0"/>
-        <Grid x:Name="field" Margin="200,30,200,91">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-
-        </Grid>
-        <Button x:Name="Reset" Content="RESET" HorizontalAlignment="Left" Margin="668,340,0,0" VerticalAlignment="Top" Height="47" Width="82" Click="Reset_Click"/>
-        <Label x:Name="ResLabel" Content="Game in progress" HorizontalAlignment="Left" Margin="614,100,0,0" VerticalAlignment="Top" Height="54" Width="164" FontSize="20"/>
-        <CheckBox x:Name="Comp_enemy" Content="Computer enemy" HorizontalAlignment="Left" Margin="626,262,0,0" VerticalAlignment="Top" Height="25" Width="139" FontWeight="Bold"/>
-
-    </Grid>
-</Window>
+        Title="Window2" Height="450" Width="800" Background="#FF86DE6A"/>
