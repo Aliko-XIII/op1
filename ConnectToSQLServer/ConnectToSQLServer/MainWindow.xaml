@@ -1,0 +1,21 @@
+﻿<Window x:Class="ConnectToSQLServer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConnectToSQLServer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="552" Width="1320" ResizeMode="NoResize">
+    <Grid>
+        <DataGrid x:Name="ReadersDG" HorizontalAlignment="Left" FontFamily="Cambria" FontSize="14" Height="252" Margin="10,267,0,0" VerticalAlignment="Top" Width="910"/>
+        <DataGrid x:Name="RequestsDG" HorizontalAlignment="Left" FontFamily="Cambria" FontSize="14" Height="248" Margin="839,14,0,0" VerticalAlignment="Top" Width="351"/>
+        <DataGrid x:Name="HallsDG" HorizontalAlignment="Left" FontFamily="Cambria" FontSize="14" Height="252" Margin="925,267,0,0" VerticalAlignment="Top" Width="265"/>
+        <DataGrid x:Name="BooksDG" HorizontalAlignment="Left" FontFamily="Cambria" FontSize="14" Height="256" Margin="10,10,0,0" VerticalAlignment="Top" Width="824"/>
+        <Button x:Name="BookButton" Content="Книги" HorizontalAlignment="Left" Margin="1195,14,0,0" VerticalAlignment="Top" Height="63" RenderTransformOrigin="0.518,0.526" Width="115" Click="BookButton_Click"/>
+        <Button x:Name="ReaderButton" Content="Читачі" HorizontalAlignment="Left" Margin="1195,82,0,0" VerticalAlignment="Top" Height="64" RenderTransformOrigin="0.518,0.526" Width="115" Click="ReaderButton_Click"/>
+        <Button x:Name="RequestButton" Content="Запити читачів" HorizontalAlignment="Left" Margin="1195,151,0,0" VerticalAlignment="Top" Height="63" RenderTransformOrigin="0.518,0.526" Width="115" Click="RequestButton_Click"/>
+        <Button x:Name="HallButton" Content="Читальна зала" Margin="1195,219,10,0" VerticalAlignment="Top" Height="63" RenderTransformOrigin="0.518,0.526" Click="HallButton_Click"/>
+        <Button x:Name="ExitButton" Content="EXIT" HorizontalAlignment="Left" Margin="1195,456,0,0" VerticalAlignment="Top" Height="63" RenderTransformOrigin="0.518,0.526" Width="115" BorderBrush="#FF4E4949" Background="#FFF11D1D" Foreground="White" FontSize="22" FontWeight="Bold" Click="ExitButton_Click"/>
+
+    </Grid>
+</Window>

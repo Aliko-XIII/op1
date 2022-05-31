@@ -1,0 +1,25 @@
+﻿<Window x:Class="ConnectToSQLServer.HallWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConnectToSQLServer"
+        mc:Ignorable="d"
+        Title="HallWindow" Height="293" Width="800">
+    <Grid Margin="0,53,0,37">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBox HorizontalAlignment="Left" Margin="193,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="332,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="464,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Номер&#xA;" HorizontalAlignment="Left" Margin="214,29,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="Назва&#xA;&#xA;" HorizontalAlignment="Left" Margin="372,29,0,0" VerticalAlignment="Top" Height="29"/>
+        <Label Content="Місткість&#xD;&#xA;" HorizontalAlignment="Left" Margin="492,32,0,0" VerticalAlignment="Top" Height="23"/>
+        <Button x:Name="ClearButton" Content="CLEAR" HorizontalAlignment="Left" Margin="707,142,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="AddButton" Content="Додати дані" HorizontalAlignment="Left" Margin="341,142,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="UpdateButton" Content="Оновити дані" HorizontalAlignment="Left" Margin="453,142,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="DelButton" Content="Видалити дані" HorizontalAlignment="Left" Margin="209,142,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
