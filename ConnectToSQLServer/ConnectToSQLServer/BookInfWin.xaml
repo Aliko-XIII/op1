@@ -1,0 +1,29 @@
+﻿<Window x:Class="ConnectToSQLServer.BookInfWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConnectToSQLServer"
+        mc:Ignorable="d"
+        Title="BookInfWin" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="/readerbackground.png" Stretch="UniformToFill" />
+    </Window.Background>
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="Black" Opacity="0.3"/>
+        </Grid.Background>
+        <DataGrid x:Name="BooksDG" HorizontalAlignment="Center" FontFamily="Cambria" Height="320" Margin="0,79,0,0" VerticalAlignment="Top" Width="720"/>
+        <Button x:Name="ExitButtonM" Content="" HorizontalAlignment="Left" Margin="741,10,0,0" VerticalAlignment="Top" Height="44" Width="49" Click="ExitButtonM_Click" RenderTransformOrigin="0.49,0.774" >
+            <Button.Background>
+                <ImageBrush ImageSource="/SeekPng.com_close-button-png_522348.png" />
+            </Button.Background>
+        </Button>
+        <Button x:Name="ExitButtonR" Content="" HorizontalAlignment="Left" Margin="741,10,0,0" VerticalAlignment="Top" Height="44" Width="49" Click="ExitButtonR_Click" RenderTransformOrigin="0.49,0.774" >
+            <Button.Background>
+                <ImageBrush ImageSource="/SeekPng.com_close-button-png_522348.png" />
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>

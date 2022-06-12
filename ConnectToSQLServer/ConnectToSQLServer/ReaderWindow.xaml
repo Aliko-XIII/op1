@@ -1,14 +1,12 @@
-﻿<Window x:Name="ReaderWindow1" x:Class="ConnectToSQLServer.ReaderWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConnectToSQLServer"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Name="ReaderWindow1" x:Class="ConnectToSQLServer.ReaderWindow"
         mc:Ignorable="d"
         Title="ReaderWindow" Height="315" Width="800">
-    <Window.Background>
-        <ImageBrush ImageSource="/readerbackground.png" Stretch="UniformToFill" />
-    </Window.Background>
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -126,6 +124,9 @@
 
         </Style>
     </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="/readerbackground.png" Stretch="UniformToFill" />
+    </Window.Background>
     <Grid Margin="0,0,0,-6">
         <Grid.Background>
             <SolidColorBrush Color="Black" Opacity="0.3"/>
@@ -137,66 +138,53 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="IDBox" HorizontalAlignment="Left" Margin="10,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-        <TextBox x:Name="SurnameBox" HorizontalAlignment="Left" Margin="149,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-        <TextBox x:Name="PassportBox" HorizontalAlignment="Left" Margin="280,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-        <TextBox x:Name="BirthBox" HorizontalAlignment="Left" Margin="417,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Grid.Row="1"/>
-        <Label  Content="Номер квитка&#xA;&#xA;" HorizontalAlignment="Left" Margin="24,22,0,0" VerticalAlignment="Top" Height="26" FontWeight="Bold" Grid.Row="1" Foreground="#FF0D0D08" >
+        <TextBox x:Name="IDBox" HorizontalAlignment="Left" Margin="17,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" Grid.Row="1"/>
+        <TextBox x:Name="NameBox" HorizontalAlignment="Left" Margin="131,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+        <TextBox x:Name="PassportBox" HorizontalAlignment="Left" Margin="396,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+        <TextBox x:Name="BirthBox" HorizontalAlignment="Left" Margin="532,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Grid.Row="1"/>
+        <Label  Content="Номер квитка&#xA;&#xA;" HorizontalAlignment="Left" Margin="24,19,0,0" VerticalAlignment="Top" Height="26" FontWeight="Bold" Grid.Row="1" Foreground="#FF0D0D08" >
             <Label.Background>
                 <SolidColorBrush Color="White" Opacity="0.7"/>
             </Label.Background>
         </Label>
-        <Label Content="Прізвище&#xA;&#xA;" HorizontalAlignment="Left" Margin="175,20,0,0" VerticalAlignment="Top" Height="30" FontWeight="Bold" Grid.Row="1" Foreground="#FF0D0D08" >
+        <Label HorizontalAlignment="Left" Margin="174,17,0,0" VerticalAlignment="Top" Height="30" FontWeight="Bold" Grid.Row="1" Foreground="#FF0D0D08" Content="Ім'я" >
             <Label.Background>
                 <SolidColorBrush Color="White" Opacity="0.7"/>
             </Label.Background>
         </Label>
-        <Label Content="Номер паспорту&#xA;" HorizontalAlignment="Left" Margin="286,20,0,0" VerticalAlignment="Top" Height="28" FontWeight="Bold" Grid.Row="1" Foreground="#FF0D0D08">
+        <Label Content="Номер паспорту&#xA;" HorizontalAlignment="Left" Margin="402,20,0,0" VerticalAlignment="Top" Height="28" FontWeight="Bold" Grid.Row="1" Foreground="#FF0D0D08">
             <Label.Background>
                 <SolidColorBrush Color="White" Opacity="0.7"/>
             </Label.Background>
         </Label>
-        <Label Content="Адреса&#xA;" HorizontalAlignment="Left" Margin="539,20,0,0" VerticalAlignment="Top" Height="27" FontWeight="Bold" Grid.Row="1" Foreground="#FF0D0D08">
+        <Label Content="Адреса&#xA;" HorizontalAlignment="Left" Margin="654,20,0,0" VerticalAlignment="Top" Height="27" FontWeight="Bold" Grid.Row="1" Foreground="#FF0D0D08">
             <Label.Background>
                 <SolidColorBrush Color="White" Opacity="0.7"/>
             </Label.Background>
         </Label>
-        <Label Content="Номер телефону" HorizontalAlignment="Left" Margin="652,17,0,0" VerticalAlignment="Top" Height="26" FontWeight="Bold" Grid.Row="1" Foreground="#FF0D0D08">
+        <Label Content="Номер телефону" HorizontalAlignment="Left" Margin="20,92,0,0" VerticalAlignment="Top" Height="26" FontWeight="Bold" Grid.Row="1" Foreground="#FF0D0D08">
             <Label.Background>
                 <SolidColorBrush Color="White" Opacity="0.7"/>
             </Label.Background>
         </Label>
-        <Label Content="Дата &#xD;&#xA;народження&#xA;&#xA;&#xA;" HorizontalAlignment="Left" Margin="410,5,0,0" VerticalAlignment="Top" Height="43" FontWeight="Bold" Grid.Row="1" Foreground="#FF0D0D08" >
+        <Label Content="Дата &#xA;народження&#xA;&#xA;&#xA;" HorizontalAlignment="Left" Margin="526,5,0,0" VerticalAlignment="Top" Height="43" FontWeight="Bold" Grid.Row="1" Foreground="#FF0D0D08" >
             <Label.Background>
                 <SolidColorBrush Color="White" Opacity="0.7"/>
             </Label.Background>
         </Label>
-        <TextBox x:Name="AdressBox" HorizontalAlignment="Left" Margin="505,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-        <TextBox x:Name="PhoneBox" HorizontalAlignment="Left" Margin="647,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-        <Button Style="{DynamicResource CustomButton}" x:Name="ClearButton1" Content="CLEAR" HorizontalAlignment="Left" Margin="150,238,0,0" VerticalAlignment="Top" Click="ClearButton1_Click" Background="#FFEFD137" Foreground="Black" FontStyle="Normal" FontWeight="Bold" Grid.Row="1"/>
-        <Button Style="{DynamicResource CustomButton}" x:Name="AddButton1" Content="Додати дані" HorizontalAlignment="Left" Margin="131,200,0,0" VerticalAlignment="Top" Click="AddButton1_Click" Background="#FF368122" Foreground="#FFFCFFF6" FontFamily="Verdana" Grid.Row="1"/>
-        <Button Style="{DynamicResource CustomButton}" x:Name="UpdateButton1" Content="Оновити дані" HorizontalAlignment="Left" Margin="225,200,0,0" VerticalAlignment="Top" Background="#FF2054D5" Foreground="#FFEEEEEE" FontFamily="Verdana" Grid.Row="1" Click="UpdateButton1_Click"/>
-        <Button Style="{DynamicResource CustomButton}" x:Name="DelButton1" Content="Видалити дані" HorizontalAlignment="Left" Margin="23,200,0,0" VerticalAlignment="Top" Background="#FFD81111" Foreground="White" FontFamily="Verdana" Grid.Row="1" Click="DelButton1_Click"/>
-        <Label Content="Освіта&#xA;" HorizontalAlignment="Left" Margin="453,96,0,0" VerticalAlignment="Top" Height="26" FontWeight="Bold" Grid.Row="1">
+        <TextBox x:Name="AdressBox" HorizontalAlignment="Left" Margin="620,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+        <TextBox x:Name="PhoneBox" HorizontalAlignment="Left" Margin="15,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+        <Button Style="{DynamicResource CustomButton}" x:Name="ClearButton1" Content="CLEAR" HorizontalAlignment="Left" Margin="150,238,0,0" VerticalAlignment="Top" Click="ClearButton1_Click" Background="#FFF2DC6B" Foreground="Black" FontStyle="Normal" FontWeight="Bold" Grid.Row="1"/>
+        <Button Style="{DynamicResource CustomButton}" x:Name="AddButton1" Content="Додати
+" HorizontalAlignment="Left" Margin="140,206,0,0" VerticalAlignment="Top" Click="AddButton1_Click" Background="#FF98D588" Foreground="Black" FontFamily="Verdana" Grid.Row="1" FontWeight="Bold"/>
+        <Button Style="{DynamicResource CustomButton}" x:Name="UpdateButton1" Content="Оновити дані" HorizontalAlignment="Left" Margin="203,207,0,0" VerticalAlignment="Top" Background="#FF759CFE" Foreground="#FF010101" FontFamily="Verdana" Grid.Row="1" Click="UpdateButton1_Click" FontWeight="Bold"/>
+        <Button Style="{DynamicResource CustomButton}" x:Name="DelButton1" Content="Видалити" HorizontalAlignment="Left" Margin="65,206,0,0" VerticalAlignment="Top" Foreground="#FF141212" FontFamily="Verdana" Grid.Row="1" Click="DelButton1_Click" Background="#FFE57171" FontWeight="Bold"/>
+        <Label Content="Освіта&#xA;" HorizontalAlignment="Left" Margin="453,92,0,0" VerticalAlignment="Top" Height="26" FontWeight="Bold" Grid.Row="1">
             <Label.Background>
                 <SolidColorBrush Color="White" Opacity="0.7"/>
             </Label.Background>
         </Label>
         <TextBox x:Name="EducationBox" HorizontalAlignment="Left" Margin="417,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-        <CheckBox x:Name="DegreeCB"  HorizontalAlignment="Left" Margin="565,127,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Row="1" Checked="DegreeCB_Checked" Foreground="Black">
-            <WrapPanel>
-                <WrapPanel.Background>
-                    <SolidColorBrush Color="White" Opacity="0.7"/>
-                </WrapPanel.Background>
-                <TextBlock>
-                            <Run>
-                        Наявний науковий ступінь
-                    </Run>
-                </TextBlock>
-            </WrapPanel>
-        </CheckBox>
-        <TextBox x:Name="HallBox" HorizontalAlignment="Left" Margin="280,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" Grid.Row="1"/>
-        <TextBox x:Name="HallBox_Copy" HorizontalAlignment="Left" Margin="280,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" Grid.Row="1"/>
         <Label Content="Читальна зала" HorizontalAlignment="Left" Margin="292,94,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Row="1">
             <Label.Background>
                 <SolidColorBrush Color="White" Opacity="0.7"/>
@@ -207,11 +195,10 @@
                 <SolidColorBrush Color="White" Opacity="0.7"/>
             </Label.Background>
         </Label>
-        <TextBox x:Name="RegistrationBox" HorizontalAlignment="Left" Margin="149,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged_1" Grid.Row="1"/>
-        <Button x:Name="InfoButton" Style="{DynamicResource InfoButton}" Content="i" HorizontalAlignment="Left" Margin="325,194,0,0" VerticalAlignment="Top" Width="30" Height="30" FontFamily="Bookman Old Style" FontSize="15" MouseEnter="Button_MouseEnter" MouseLeave="InfoButton_MouseLeave" Grid.Row="1"/>
+        <TextBox x:Name="RegistrationBox" HorizontalAlignment="Left" Margin="149,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+        <Button x:Name="QInfoButton" Style="{DynamicResource InfoButton}" Content="i" HorizontalAlignment="Left" Margin="353,194,0,0" VerticalAlignment="Top" Width="30" Height="30" FontFamily="Bookman Old Style" FontSize="15" MouseEnter="Button_MouseEnter" MouseLeave="InfoButton_MouseLeave" Grid.Row="1"/>
 
-        <TextBlock x:Name="InfoBlock" HorizontalAlignment="Left" Margin="370,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="88" Width="229" RenderTransformOrigin="0.5,0.5" FontStyle="Italic" Background="#FF7AD6E3" FontWeight="Bold" Grid.Row="1" >
-
+        <TextBlock x:Name="InfoBlock" HorizontalAlignment="Left" Margin="391,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="88" Width="229" RenderTransformOrigin="0.5,0.5" FontStyle="Normal" Background="#FFB8B8B8" FontWeight="Bold" Grid.Row="1" TextAlignment="Center" FontFamily="Consolas" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -219,10 +206,31 @@
                     <RotateTransform/>
                     <TranslateTransform X="0.487"/>
                 </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Для видалення введіть лише номер квитка"/><LineBreak/><Run Text="Для додавання введіть усі дані"/><LineBreak/><Run Language="uk-ua" Text="Для оновлення введіть лише номер та ті данні що хочете змінити"/><LineBreak/><Run Language="uk-ua"/></TextBlock>
-        <Button x:Name="ExitButton" Content="" HorizontalAlignment="Left" Margin="718,192,0,0" Grid.Row="1" VerticalAlignment="Top" Height="44" Width="49" Click="ExitButton_Click" >
+            </TextBlock.RenderTransform><Run Text=" Для видалення введіть лише номер квитка"/><LineBreak/><Run Text="Для додавання введіть усі дані"/><LineBreak/><Run Text="Для оновлення введіть лише номер та ті данні що хочете змінити"/><LineBreak/><Run/></TextBlock>
+        <Button x:Name="ExitButton" Content="" HorizontalAlignment="Left" Margin="656,220,0,0" Grid.Row="1" VerticalAlignment="Top" Height="44" Width="49" Click="ExitButton_Click">
             <Button.Background>
-                <ImageBrush ImageSource="/SeekPng.com_close-button-png_522348.png" />
+                <ImageBrush ImageSource="/SeekPng.com_close-button-png_522348.png"/>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="SurnameBox" HorizontalAlignment="Left" Margin="261,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+        <Label Content="Прізвище&#xA;&#xA;" HorizontalAlignment="Left" Margin="287,17,0,0" VerticalAlignment="Top" Height="30" FontWeight="Bold" Grid.Row="1" Foreground="#FF0D0D08" >
+            <Label.Background>
+                <SolidColorBrush Color="White" Opacity="0.7"/>
+            </Label.Background>
+        </Label>
+        <ComboBox x:Name="HallCB" HorizontalAlignment="Left" Margin="280,125,0,0" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+        <ComboBox x:Name="DegreeCB" HorizontalAlignment="Left" Margin="568,125,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120">
+            <System:String>Є</System:String>
+            <System:String>Немає</System:String>
+        </ComboBox>
+        <Label Content="Науковий ступінь" HorizontalAlignment="Left" Margin="571,92,0,0" VerticalAlignment="Top" Height="26" FontWeight="Bold" Grid.Row="1">
+            <Label.Background>
+                <SolidColorBrush Color="White" Opacity="0.7"/>
+            </Label.Background>
+        </Label>
+        <Button x:Name="InfoBtn" Content="" HorizontalAlignment="Left" Margin="650,155,0,0" VerticalAlignment="Top" Width="60" Height="60" Grid.Row="1" Click="InfoBtn_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/database-table-icon-13.jpg"/>
             </Button.Background>
         </Button>
 

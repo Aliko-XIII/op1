@@ -57,23 +57,50 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BookInfWin.xaml.cs">
+      <DependentUpon>BookInfWin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BookWindow.xaml.cs">
       <DependentUpon>BookWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HallInfWin.xaml.cs">
+      <DependentUpon>HallInfWin.xaml</DependentUpon>
     </Compile>
     <Compile Include="HallWindow.xaml.cs">
       <DependentUpon>HallWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BookSearchWin.xaml.cs">
+      <DependentUpon>BookSearchWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReaderInfWin.xaml.cs">
+      <DependentUpon>ReaderInfWin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ReaderWindow.xaml.cs">
       <DependentUpon>ReaderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RequestInfWin.xaml.cs">
+      <DependentUpon>RequestInfWin.xaml</DependentUpon>
     </Compile>
     <Compile Include="RequestWindow.xaml.cs">
       <DependentUpon>RequestWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="BookInfWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BookWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="HallInfWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="HallWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BookSearchWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -89,7 +116,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ReaderInfWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ReaderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RequestInfWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -131,13 +166,13 @@
     <Resource Include="readerbackground.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="istockphoto-1082069478-612x612.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="pngegg.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="SeekPng.com_close-button-png_522348.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="database-table-icon-13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

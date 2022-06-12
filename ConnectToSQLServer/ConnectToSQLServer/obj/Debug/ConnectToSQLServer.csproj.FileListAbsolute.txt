@@ -37,3 +37,13 @@ C:\Users\tekto\Desktop\ConnectToSQLServer\ConnectToSQLServer\obj\Debug\BookWindo
 C:\Users\tekto\Desktop\ConnectToSQLServer\ConnectToSQLServer\obj\Debug\HallWindow.baml
 C:\Users\tekto\Desktop\ConnectToSQLServer\ConnectToSQLServer\obj\Debug\ReaderWindow.baml
 C:\Users\tekto\Desktop\ConnectToSQLServer\ConnectToSQLServer\obj\Debug\RequestWindow.baml
+C:\Users\tekto\Desktop\ConnectToSQLServer\ConnectToSQLServer\obj\Debug\BookInfWin.g.cs
+C:\Users\tekto\Desktop\ConnectToSQLServer\ConnectToSQLServer\obj\Debug\BookInfWin.baml
+C:\Users\tekto\Desktop\ConnectToSQLServer\ConnectToSQLServer\obj\Debug\ReaderInfWin.g.cs
+C:\Users\tekto\Desktop\ConnectToSQLServer\ConnectToSQLServer\obj\Debug\ReaderInfWin.baml
+C:\Users\tekto\Desktop\ConnectToSQLServer\ConnectToSQLServer\obj\Debug\RequestInfWin.g.cs
+C:\Users\tekto\Desktop\ConnectToSQLServer\ConnectToSQLServer\obj\Debug\RequestInfWin.baml
+C:\Users\tekto\Desktop\ConnectToSQLServer\ConnectToSQLServer\obj\Debug\HallInfWin.g.cs
+C:\Users\tekto\Desktop\ConnectToSQLServer\ConnectToSQLServer\obj\Debug\HallInfWin.baml
+C:\Users\tekto\Desktop\ConnectToSQLServer\ConnectToSQLServer\obj\Debug\BookSearchWin.g.cs
+C:\Users\tekto\Desktop\ConnectToSQLServer\ConnectToSQLServer\obj\Debug\BookSearchWin.baml

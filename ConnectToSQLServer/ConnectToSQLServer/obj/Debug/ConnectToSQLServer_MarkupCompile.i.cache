@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\tekto\Desktop\ConnectToSQLServer\ConnectToSQLServer\App.xaml
-5199130017
+10-181306358
 
-101326480514
+15178568293
 14-1486485296
-BookWindow.xaml;HallWindow.xaml;MainWindow.xaml;ReaderWindow.xaml;RequestWindow.xaml;
+BookInfWin.xaml;BookWindow.xaml;HallInfWin.xaml;HallWindow.xaml;BookSearchWin.xaml;MainWindow.xaml;ReaderInfWin.xaml;ReaderWindow.xaml;RequestInfWin.xaml;RequestWindow.xaml;
 
-True
+False
 

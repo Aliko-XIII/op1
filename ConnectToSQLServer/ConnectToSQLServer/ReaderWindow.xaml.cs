@@ -33,7 +33,26 @@ namespace ConnectToSQLServer
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             InfoBlock.Visibility = Visibility.Hidden;
+            InitHallCB();
         }
+
+        private void InitHallCB()
+        {
+            var data = new DataSet();
+            connection = new SqlConnection(connectionString);
+            connection.Open();
+            adapter = new SqlDataAdapter("Select NameHall From Halls;", connectionString);
+            adapter.Fill(data);
+            List<string> halls = new List<string>();
+            foreach (DataRow row in data.Tables[0].Rows)
+            {
+                halls.Add(row["NameHall"].ToString());
+            }
+            connection.Close();
+            HallCB.ItemsSource = halls;
+
+        }
+
         private void ChangeData(string SQLQuery)
         {
             connection = new SqlConnection(connectionString);
@@ -42,14 +61,11 @@ namespace ConnectToSQLServer
             command.ExecuteNonQuery();
             connection.Close();
         }
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
 
         private void AddButton1_Click(object sender, RoutedEventArgs e)
         {
             if (IDBox.Text != string.Empty &&
+                NameBox.Text != string.Empty &&
                 SurnameBox.Text != string.Empty &&
                 AdressBox.Text != string.Empty &&
                 PassportBox.Text != string.Empty &&
@@ -57,12 +73,13 @@ namespace ConnectToSQLServer
                 EducationBox.Text != string.Empty &&
                 PhoneBox.Text != string.Empty &&
                 RegistrationBox.Text != string.Empty &&
-                HallBox.Text != string.Empty)
+                HallCB.SelectedIndex > -1 &&
+                DegreeCB.SelectedIndex > -1)
             {
                 if (!InTable(IDBox.Text))
                 {
-                    string degree = DegreeCB.IsChecked == true ? "Є" : "Немає";
                     string sqlQ = "declare @id int;" +
+                        "declare @name varchar(30);" +
                         "declare @surname varchar(30);" +
                         "declare @adress varchar(50);" +
                         "declare @passport int;" +
@@ -74,17 +91,18 @@ namespace ConnectToSQLServer
                         "declare @hall varchar(30);" +
                         "declare @idhall int;" +
                         $"set @id = {IDBox.Text};" +
+                        $"set @name = '{NameBox.Text}';" +
                         $"set @surname = '{SurnameBox.Text}';" +
                         $"set @adress = '{AdressBox.Text}';" +
                         $"set @passport = {PassportBox.Text};" +
                         $"set @birthdate = '{BirthBox.Text}';" +
                         $"set @education = '{EducationBox.Text}';" +
                         $"set @registration = '{RegistrationBox.Text}';" +
-                        $"set @degree = '{degree}';" +
+                        $"set @degree = '{DegreeCB.SelectedValue}';" +
                         $"set @phone = '{PhoneBox.Text}';" +
-                        $"set @hall = '{HallBox.Text}';" +
-                        "insert into Readers(IDReader, Surname, Adress, Passport, BirthDate, Education, Degree, Registration, Phone)" +
-                        " values(@id, @surname, @adress, @passport, @birthdate, @education, @degree, @registration, @phone);" +
+                        $"set @hall = '{HallCB.SelectedItem.ToString()}';" +
+                        "insert into Readers(IDReader, Name, Surname, Adress, Passport, BirthDate, Education, Degree, Registration, Phone)" +
+                        " values(@id, @name, @surname, @adress, @passport, @birthdate, @education, @degree, @registration, @phone);" +
                         "set @idhall = (select IDHall from Halls where NameHall = @hall);" +
                         "insert into ReaderHall(IDReader, IDHall) values(@id, @idhall); ";
                     try
@@ -98,7 +116,7 @@ namespace ConnectToSQLServer
                 }
                 else
                 {
-                    MessageBox.Show("Такий номер читацького квитка вже існує");
+                    MessageBox.Show("Такий номер читацького квитка вже існує.\nМоже ви хотіли оновити дані?");
                 }
             }
             else
@@ -111,20 +129,16 @@ namespace ConnectToSQLServer
         private void ClearButton1_Click(object sender, RoutedEventArgs e)
         {
             IDBox.Clear();
+            NameBox.Clear();
             SurnameBox.Clear();
             PassportBox.Clear();
             PhoneBox.Clear();
             BirthBox.Clear();
             AdressBox.Clear();
-            HallBox.Clear();
+            HallCB.SelectedIndex= -1;
             EducationBox.Clear();
             RegistrationBox.Clear();
-            DegreeCB.IsChecked = false;
-        }
-
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
+            DegreeCB.SelectedIndex = -1;
         }
 
         private void Button_MouseEnter(object sender, MouseEventArgs e)
@@ -137,17 +151,16 @@ namespace ConnectToSQLServer
             InfoBlock.Visibility = Visibility.Hidden;
         }
 
-        private void DegreeCB_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void UpdateButton1_Click(object sender, RoutedEventArgs e)
         {
-            string degree = DegreeCB.IsChecked == true ? "Є" : "Немає";
+            
             if (IDBox.Text != String.Empty)
             {
                 string sqlQ=String.Empty;
+                if (NameBox.Text != String.Empty)
+                {
+                    sqlQ += $"Update Readers set Name='{NameBox.Text}' where IDReader={IDBox.Text};";
+                }
                 if (SurnameBox.Text != String.Empty)
                 {
                     sqlQ += $"Update Readers set Surname='{SurnameBox.Text}' where IDReader={IDBox.Text};";
@@ -169,37 +182,36 @@ namespace ConnectToSQLServer
                     sqlQ += $"Update Readers set Adress='{AdressBox.Text}' where IDReader={IDBox.Text};";
 
                 }
-                if(HallBox.Text!= String.Empty)
+                if(HallCB.SelectedIndex>-1)
                 {
-                    sqlQ += $"declare @idhall int;" +
-                        $"set @idhall=(select IDHall from Halls where NameHall='{HallBox.Text}');" +
-                        $"Update ReaderHall set IDHall=@idhall where IDReader={IDBox.Text}";
+                    sqlQ += $" declare @idhall int;" +
+                        $" set @idhall=(select IDHall from Halls where NameHall='{HallCB.SelectedItem}');" +
+                        $" Update ReaderHall set IDHall=@idhall where IDReader={IDBox.Text};";
 
                 }
                 if (EducationBox.Text != String.Empty)
                 {
-                    sqlQ += $"Update Readers set Registration='{EducationBox.Text}' where IDReader={IDBox.Text}";
+                    sqlQ += $" Update Readers set Education='{EducationBox.Text}' where IDReader={IDBox.Text};";
 
                 }
                 if(RegistrationBox.Text != String.Empty)
                 {
-                    sqlQ += $"Update Readers set Surname='{RegistrationBox.Text}' where IDReader={IDBox.Text}";
+                    sqlQ += $" Update Readers set Registration='{RegistrationBox.Text}' where IDReader={IDBox.Text};";
                 }
-                
-                MessageBoxResult res=MessageBox.Show("Ви хочете змінити комірку Вчений ступінь?", "Оберіть один з варіантів",MessageBoxButton.YesNoCancel);
-                if (res == MessageBoxResult.Yes)
+                if (DegreeCB.SelectedIndex > -1)
                 {
-                    sqlQ += $"Update Readers set Degree='{degree}' where IDReader={IDBox.Text}";
-                    try
-                    {
-                        ChangeData(sqlQ);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
+                    MessageBox.Show((string)DegreeCB.SelectedValue);
+                    sqlQ += $" Update Readers set Degree='{DegreeCB.SelectedValue}' where IDReader={IDBox.Text};";
                 }
-                
+                try
+                {
+                    ChangeData(sqlQ);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
 
             }
             else
@@ -237,16 +249,19 @@ namespace ConnectToSQLServer
             return id_list.Contains(id);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mw = new MainWindow();
             Hide();
             mw.Show();
+        }
+
+        private void InfoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ReaderInfWin readerInf = new ReaderInfWin();
+            readerInf.ExitButtonM.Visibility = Visibility.Hidden;
+            readerInf.ExitButtonR.Visibility = Visibility.Visible;
+            readerInf.Show();
         }
     }
 }

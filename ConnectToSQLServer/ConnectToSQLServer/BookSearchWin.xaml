@@ -1,0 +1,123 @@
+﻿<Window x:Class="ConnectToSQLServer.BookSearchWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConnectToSQLServer"
+        mc:Ignorable="d"
+        Title="LibrarianWindow" Height="315" Width="800" Background="#FF423F3F" Foreground="White">
+
+
+    <Grid Margin="0,0,0,-6">
+        <Grid.Background>
+            <SolidColorBrush Color="Black" Opacity="0.3"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="291*"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="ExitButton1" Content="" HorizontalAlignment="Left" Margin="81,220,0,0" Grid.Row="1" VerticalAlignment="Top" Height="44" Width="49" Click="ExitButton_Click" Grid.Column="1">
+            <Button.Background>
+                <ImageBrush ImageSource="/SeekPng.com_close-button-png_522348.png"/>
+            </Button.Background>
+        </Button>
+        <TabControl Grid.Row="1"  Grid.ColumnSpan="2">
+            <TabItem Header="Пошук за шифром" Margin="-7,-7,3,5">
+                <TabItem.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.113"/>
+                        <TranslateTransform X="2.765" Y="6.135"/>
+                    </TransformGroup>
+                </TabItem.RenderTransform>
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="readerbackground.png"/>
+                    </Grid.Background>
+
+                    <Label  Content="ПОШУК КНИГ ЗА НАЗВОЮ ЧИ ШИФРОМ" HorizontalAlignment="Left" VerticalAlignment="Top" Height="37" FontWeight="Bold" Foreground="#FF0D0D08" FontSize="14" Width="302" Margin="239,29,0,0" >
+                        <Label.Background>
+                            <SolidColorBrush Color="White" Opacity="0.7"/>
+                        </Label.Background>
+                    </Label>
+                    <Button x:Name="SearchBBtn" Content="" HorizontalAlignment="Left" Margin="561,115,0,0" VerticalAlignment="Top" Width="50" Height="50">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/search.png"/>
+                        </Button.Background>
+
+                    </Button>
+                    <Label  Content="Шифр" HorizontalAlignment="Left" Margin="278,82,0,0" VerticalAlignment="Top" Height="36" FontWeight="Bold" Foreground="#FF0D0D08" Width="58" FontSize="13" >
+                        <Label.Background>
+                            <SolidColorBrush Color="White" Opacity="0.7"/>
+                        </Label.Background>
+                    </Label>
+                    <Label  Content="Назва" HorizontalAlignment="Left" Margin="444,81,0,0" VerticalAlignment="Top" Height="36" FontWeight="Bold" Foreground="#FF0D0D08" Width="56" FontSize="13" >
+                        <Label.Background>
+                            <SolidColorBrush Color="White" Opacity="0.7"/>
+                        </Label.Background>
+                    </Label>
+                    <TextBox x:Name="IDBookBox" HorizontalAlignment="Left" Margin="232,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Height="54"/>
+                    <TextBox x:Name="BookBox" HorizontalAlignment="Left" Margin="397,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="151" Height="54"/>
+                    <Button x:Name="ExitBButton" Content="" HorizontalAlignment="Left" Margin="652,185,0,0" VerticalAlignment="Top" Height="44" Width="49" Click="ExitButton_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/SeekPng.com_close-button-png_522348.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="InfoBtnB" Content="" HorizontalAlignment="Left" Margin="646,0,0,0" VerticalAlignment="Center" Width="60" Height="60" Click="InfoBtnB_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/database-table-icon-13.jpg"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Пошук за читачем">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="777*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="readerbackground.png"/>
+                    </Grid.Background>
+
+                    <Label  Content="КНИГИ ЗАКРІПЛЕНІ ЗА ЧИТАЧЕМ" HorizontalAlignment="Left" Margin="214,30,0,0" VerticalAlignment="Top" Height="36" FontWeight="Bold" Foreground="#FF0D0D08" FontSize="14" Grid.Column="1" Width="243" >
+                        <Label.Background>
+                            <SolidColorBrush Color="White" Opacity="0.7"/>
+                        </Label.Background>
+                    </Label>
+                    <Button x:Name="SearchRBtn" Content="" HorizontalAlignment="Left" Margin="545,83,0,0" VerticalAlignment="Top" Width="53" Height="54" Grid.Column="1">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/search.png"/>
+                        </Button.Background>
+
+                    </Button>
+                    <Label  Content="Номер квитка" HorizontalAlignment="Left" Margin="197,97,0,0" VerticalAlignment="Top" Height="36" FontWeight="Bold" Foreground="#FF0D0D08" Grid.Column="1" Width="108" FontSize="13" >
+                        <Label.Background>
+                            <SolidColorBrush Color="White" Opacity="0.7"/>
+                        </Label.Background>
+                    </Label>
+                    <Label x:Name="ReaderBookBox"  Content="Закріплені за ним книжки" HorizontalAlignment="Left" Margin="335,98,0,0" VerticalAlignment="Top" Height="36" FontWeight="Bold" Foreground="#FF0D0D08" Grid.Column="1" Width="182" FontSize="13" >
+                        <Label.Background>
+                            <SolidColorBrush Color="White" Opacity="0.7"/>
+                        </Label.Background>
+                    </Label>
+                    <TextBox x:Name="ReaderBox" HorizontalAlignment="Left" Margin="172,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="158" Height="52" Grid.Column="1"/>
+                    <TextBox HorizontalAlignment="Left" Margin="346,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="159" Height="52" Grid.Column="1"/>
+                    <Button x:Name="ExitRButton" Content="" HorizontalAlignment="Left" Margin="644,196,0,0" VerticalAlignment="Top" Height="44" Width="49" Click="ExitButton_Click" Grid.Column="1">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/SeekPng.com_close-button-png_522348.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="InfoBtnR" Content="" HorizontalAlignment="Left" Margin="639,116,0,0" VerticalAlignment="Top" Width="60" Height="60" Click="InfoBtnR_Click" Grid.Column="1">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/database-table-icon-13.jpg"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
